@@ -40,7 +40,7 @@ npm install
 npm start
 
 
-Server will start at 👉 http://localhost:3000
+Server will start at 👉 http://localhost:8080
 
 🗺️ Folder Structure
 Wanderlust/
