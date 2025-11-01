@@ -1,7 +1,7 @@
 if(process.env.NODE_ENV != "production"){
    require("dotenv").config();
 }
-console.log(process.env.IMAGE);
+
 
 const express = require("express");
 const mongoose = require("mongoose");
