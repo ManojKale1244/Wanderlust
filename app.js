@@ -212,7 +212,7 @@ const { error } = require("console");
 app.use("/listings", listingRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Wanderlust!");
+  res.redirect("/listings");
 });
 
 
