@@ -94,16 +94,15 @@ module.exports.showListing = async (req,res)=>{
 };
 
 
-      module.exports.renderDelete = async (req, res) => {
-    const { id } = req.params;
-    const deletedListing = await Listing.findByIdAndDelete(id);
+   module.exports.deleteListing = async (req, res) => {
+  const { id } = req.params;
+  const deletedListing = await Listing.findByIdAndDelete(id);
 
-    if (!deletedListing) {
-        req.flash("error", "Listing not found!");
-        return res.redirect("/listings");
-    }
+  if (!deletedListing) {
+    req.flash("error", "Listing not found!");
+    return res.redirect("/listings");
+  }
 
-    console.log(deletedListing);
-    req.flash("success", "Listing Deleted!");
-    res.redirect("/listings");
-}
+  req.flash("success", "Listing deleted successfully!");
+  res.redirect("/listings");
+};
