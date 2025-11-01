@@ -7,7 +7,14 @@ module.exports.listingSchema = Joi.object({
     location: Joi.string().required(),
     country: Joi.string().required(),
     price: Joi.number().required().min(0),
-    image: Joi.any(),          // ✅ allow file upload field
-    imageUrl: Joi.string().allow("", null) // ✅ optional URL field
+    image: Joi.any(),          // allow file upload field
+    imageUrl: Joi.string().allow("", null) // optional URL field
+  }).required()
+});
+
+module.exports.reviewSchema = Joi.object({
+  review: Joi.object({
+    rating: Joi.number().required().min(1).max(5),
+    comment: Joi.string().required()
   }).required()
 });
