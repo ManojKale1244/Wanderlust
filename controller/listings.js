@@ -2,7 +2,7 @@ const Listing = require("../models/listing");
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const { cloudinary } = require("../cloudConfig");
 
-const map_Token = process.env.map_Token;
+const map_Token =process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({accessToken: map_Token});
 
 module.exports.index =  async (req,res)=>{
